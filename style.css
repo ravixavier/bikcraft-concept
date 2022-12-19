@@ -1,3 +1,14 @@
+:root {
+  --fundo: #f3f3f3;
+  --fundo-1: #fff;
+  --text: #000;
+  --text-1: #222;
+  --cor-primaria: #e21;
+  --cor-primaria-1: #900;
+  --cor-subtitulo: rgba(0, 0, 0, 0.2);
+  --onda: url("./img/onda-clara.svg");
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
@@ -5,7 +16,8 @@ body {
   gap: 60px;
   justify-items: center;
   margin-top: 60px;
-  background-color: #f7f7f7;
+  background-color: var(--fundo);
+  color: var(--text);
 }
 
 img {
@@ -50,16 +62,16 @@ p {
 
 .menu a {
   display: block;
-  background: #ffffff;
+  background: var(--fundo-1);
   padding: 1rem 2rem;
   border-radius: 4px;
-  color: #000000;
+  color: var(--text);
   text-transform: uppercase;
-  border: 2px solid #fff;
+  border: 2px solid var(--fundo-1);
 }
 
 .menu a:hover {
-  border-color: #e21;
+  border-color: var(--cor-primaria);
 }
 
 .conteudo-item1,
@@ -70,7 +82,7 @@ p {
 }
 
 .introducao {
-  background: #fff;
+  background: var(--fundo-1);
   padding: 40px;
   text-align: right;
   position: relative;
@@ -89,40 +101,44 @@ p {
   font-size: 2rem;
 }
 
+.introducao p {
+  color: var(--text-1);
+}
+
 .introducao::before {
   content: "";
   width: 60px;
   height: 4px;
-  background: #e21;
+  background: var(--cor-primaria);
   position: absolute;
   top: 30px;
   right: -30px;
 }
 
 .botao {
-  background: #e21;
-  color: #fff;
+  background: var(--cor-primaria);
+  color: var(--text);
   padding: 1rem 2rem;
   border-radius: 4px;
   text-transform: uppercase;
 }
 
 .botao:hover {
-  background: #900;
+  background: var(--cor-primaria-1);
 }
 
 .subtitulo {
   font-size: 4rem;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.2);
+  color: var(--cor-subtitulo);
   text-align: right;
   padding: 40px;
   align-self: center;
-  background-image: url("./img/onda.svg");
+  background-image: var(--onda);
 }
 
 .vantagens {
-  background: #fff;
+  background: var(--fundo-1);
   padding: 40px;
 }
 
@@ -132,14 +148,15 @@ p {
   gap: 10px 20px;
   padding: 20px;
   border-left: 4px solid transparent;
+  border-radius: 5px;
 }
 
 .vantagens-item:nth-child(odd) {
-  background: #eee;
+  background: var(--fundo);
 }
 
 .vantagens-item:hover {
-  border-color: #e21;
+  border-color: var(--cor-primaria);
 }
 
 .vantagens-item p {
@@ -147,11 +164,23 @@ p {
 }
 
 .rodape {
-  background: #fff;
+  background: var(--fundo-1);
   width: 100%;
   text-align: center;
   padding: 40px;
   box-sizing: border-box;
+  color: var(--text-1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #202020;
+    --fundo-1: #000;
+    --text: #eee;
+    --text-1: #bbb;
+    --cor-subtitulo: rgba(255, 255, 255, 0.2);
+    --onda: url("./img/onda-escura.svg");
+  }
 }
 
 @media (max-width: 1000px) {
@@ -197,9 +226,3 @@ p {
     padding: 25px;
   }
 }
-
-/* @media (max-width: 390px) {
-  .subtitulo {
-    font-size: 2rem;
-  }
-} */
